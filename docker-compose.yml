@@ -1,0 +1,16 @@
+# MySQL pronto para uso (opcional). Suba com:  docker compose up -d
+# Usuario: root | Senha: root | Banco: baozi_store | Porta: 3306
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: baozi-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: baozi_store
+    ports:
+      - "3306:3306"
+    volumes:
+      - baozi_data:/var/lib/mysql
+
+volumes:
+  baozi_data:
